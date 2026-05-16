@@ -1,0 +1,27 @@
+{
+  "loading": "جاري التحميل",
+  "dashboard_title": "لوحة التحكم",
+  "total_sales": "إجمالي المبيعات",
+  "total_expenses": "إجمالي المصاريف",
+  "net_profit": "صافي الربح",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "login_btn": "تسجيل الدخول",
+  "login_failed": "فشل تسجيل الدخول. تحقق من بيانات الاعتماد.",
+  "accounting_system": "النظام المحاسبي",
+{
+  "loading": "جاري التحميل",
+  "dashboard_title": "لوحة التحكم",
+  "total_sales": "إجمالي المبيعات",
+  "total_expenses": "إجمالي المصاريف",
+  "net_profit": "صافي الربح",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "login_btn": "تسجيل الدخول",
+  "login_failed": "فشل تسجيل الدخول. تحقق من بيانات الاعتماد.",
+  "accounting_system": "النظام المحاسبي",
+  "switch_lang": "تغيير اللغة",
+  "monthly_performance": "الأداء الشهري"
+}
+  "switch_lang": "تغيير اللغة"
+}
