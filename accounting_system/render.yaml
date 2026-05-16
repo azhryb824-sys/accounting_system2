@@ -28,10 +28,7 @@ services:
     startCommand: npx serve -s dist -l $PORT
     envVars:
       - key: VITE_API_BASE_URL
-        fromService:
-          type: web
-          name: accounting-backend
-          property: host
+        value: https://accounting-backend.onrender.com # تأكد من مطابقة الاسم لرابط الـ Backend الفعلي
 
 databases:
   - name: accounting-db
