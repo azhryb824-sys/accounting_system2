@@ -1,5 +1,4 @@
 services:
-  # خدمة الخلفية (FastAPI)
   - type: web
     name: accounting-backend
     env: python
@@ -17,24 +16,7 @@ services:
         description: "Generate using Fernet.generate_key().decode()"
         sync: false
       - key: ALLOWED_ORIGINS
-        value: "*" # يمكن تحديثه لاحقاً برابط الـ Frontend الفعلي
-
-  # خدمة الواجهة الأمامية (React/Vite)
-  - type: static
-    name: accounting-frontend
-    rootDir: accounting_system/accounting_system_frontend
-    buildCommand: npm install && npm run build
-    publishDir: dist
-    envVars:
-      - key: VITE_API_BASE_URL
-        fromService:
-          type: web
-          name: accounting-backend
-          property: url
-    routes:
-      - type: rewrite
-        source: /.*
-        destination: /index.html
+        value: "*"  # لاحقًا نضع رابط الفرونت إند
 
 databases:
   - name: accounting-db
