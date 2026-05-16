@@ -18,6 +18,20 @@ services:
       - key: ALLOWED_ORIGINS
         value: "*"  # لاحقًا نضع رابط الفرونت إند
 
+  # خدمة الواجهة الأمامية (React/Vite)
+  - type: web
+    name: accounting-frontend
+    env: node
+    rootDir: accounting_system/accounting_system_frontend
+    buildCommand: npm install && npm run build
+    startCommand: npx serve -s dist -l $PORT
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: accounting-backend
+          property: url
+
 databases:
   - name: accounting-db
     plan: free

@@ -7,6 +7,9 @@ from typing import Generator
 # استخدام متغيرات البيئة لتعزيز الأمان في الإنتاج
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:password@localhost/accounting_db")
 
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
 engine = create_engine(
     DATABASE_URL,
     pool_size=20,
