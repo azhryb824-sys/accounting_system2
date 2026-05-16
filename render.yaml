@@ -1,4 +1,5 @@
 services:
+  # خدمة الخلفية (FastAPI)
   - type: web
     name: accounting-backend
     env: python
@@ -30,7 +31,7 @@ services:
         fromService:
           type: web
           name: accounting-backend
-          property: url
+          property: host
 
 databases:
   - name: accounting-db
