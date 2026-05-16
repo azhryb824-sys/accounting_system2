@@ -3,6 +3,7 @@ services:
   - type: web
     name: accounting-backend
     env: python
+    rootDir: accounting_system
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
@@ -19,17 +20,17 @@ services:
         value: "*" # يمكن تحديثه لاحقاً برابط الـ Frontend الفعلي
 
   # خدمة الواجهة الأمامية (React/Vite)
-  - type: web
+  - type: static_site
     name: accounting-frontend
-    env: static
-    buildCommand: cd accounting_system_frontend && npm install && npm run build
-    publishDir: accounting_system_frontend/dist
+    rootDir: accounting_system/accounting_system_frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
     envVars:
       - key: VITE_API_BASE_URL
         fromService:
           type: web
           name: accounting-backend
-          property: host
+          property: url
     routes:
       - type: rewrite
         source: /.*
