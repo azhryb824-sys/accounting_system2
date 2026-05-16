@@ -20,7 +20,7 @@ services:
         value: "*" # يمكن تحديثه لاحقاً برابط الـ Frontend الفعلي
 
   # خدمة الواجهة الأمامية (React/Vite)
-  - type: static_site
+  - type: static
     name: accounting-frontend
     rootDir: accounting_system/accounting_system_frontend
     buildCommand: npm install && npm run build
